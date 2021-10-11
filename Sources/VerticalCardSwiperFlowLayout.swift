@@ -175,6 +175,11 @@ internal class VerticalCardSwiperFlowLayout: UICollectionViewFlowLayout {
         origin.y = finalY
         attributes.frame = CGRect(origin: origin, size: attributes.frame.size)
         attributes.zIndex = attributes.indexPath.row
+        
+        // Check
+        let itemOffset = attributes.center.y - collectionView.contentOffset.y
+        let middleOffset = itemOffset / attributes.frame.height - 0.5
+        attributes.alpha = 1.0 - abs(middleOffset) + 0.2
     }
 
     // Creates and applies a CGAffineTransform to the attributes to recreate the effect of the card going to the background.
