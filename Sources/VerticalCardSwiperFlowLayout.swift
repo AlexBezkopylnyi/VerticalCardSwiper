@@ -168,7 +168,7 @@ internal class VerticalCardSwiperFlowLayout: UICollectionViewFlowLayout {
         let deltaY = (finalY - cardMinY) / cardHeight
         transformAttributes(attributes: attributes, deltaY: deltaY)
 
-        attributes.alpha = 1 - (deltaY - CGFloat(stackedCardsCount))
+//        attributes.alpha = 1 - (deltaY - CGFloat(stackedCardsCount))
 
         // Set the attributes frame position to the values we calculated
         origin.x = collectionView.frame.width/2 - attributes.frame.width/2 - collectionView.contentInset.left
@@ -176,7 +176,7 @@ internal class VerticalCardSwiperFlowLayout: UICollectionViewFlowLayout {
         attributes.frame = CGRect(origin: origin, size: attributes.frame.size)
         attributes.zIndex = attributes.indexPath.row
         
-        // Check
+        //Manipulating with alpha when card swiping
         let itemOffset = attributes.center.y - collectionView.contentOffset.y
         let middleOffset = itemOffset / attributes.frame.height - 0.5
         attributes.alpha = 1.0 - abs(middleOffset) + 0.2
