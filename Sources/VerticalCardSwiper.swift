@@ -533,7 +533,7 @@ extension VerticalCardSwiper: UICollectionViewDelegateFlowLayout {
         if let customSize = delegate?.sizeForItem?(verticalCardSwiperView: verticalCardSwiperView, index: index) {
             // set custom sizes and make sure sizes are not negative, if they are, don't subtract the insets.
             cellWidth = customSize.width - (customSize.width - xInsets > 0 ? xInsets : 0)
-            cellHeight = customSize.height// - (customSize.height - yInsets > 0 ? yInsets : 0) //TEST
+            cellHeight = customSize.height// - (customSize.height - yInsets > 0 ? yInsets : 0)
         } else {
             cellWidth = verticalCardSwiperView.frame.size.width - xInsets
             cellHeight = verticalCardSwiperView.frame.size.height - yInsets
